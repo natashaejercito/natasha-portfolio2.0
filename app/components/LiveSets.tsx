@@ -131,7 +131,6 @@ export default function LiveSets() {
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                     <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 10, letterSpacing: '0.08em', color: 'var(--gold)' }}>{e.cat}</span>
-                    <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 10, color: 'rgba(242,235,221,0.72)' }}>{e.year}</span>
                   </div>
                   <div style={{ fontSize: 18, fontWeight: 700, lineHeight: 1.05, marginTop: 7, color: '#f7f1e6' }}>{e.name}</div>
                   <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 10.5, color: 'rgba(242,235,221,0.8)', marginTop: 4 }}>{e.type} · {e.role}</div>
