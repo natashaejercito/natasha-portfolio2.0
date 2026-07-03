@@ -45,7 +45,6 @@ export default function Contact() {
       </div>
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', padding: '26px clamp(20px,5vw,56px)', display: 'flex', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap', fontFamily: "'Space Mono', monospace", fontSize: 11, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.5)' }}>
-          <span>℗ 2026 NATASHA EJERCITO</span>
           <span>BUILT BY NAT AND CLAUDE DESIGN</span>
           <a href="#top" style={{ color: 'inherit', textDecoration: 'none' }}
             onMouseEnter={e => (e.currentTarget.style.color = '#d8a73f')}
