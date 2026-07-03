@@ -5,7 +5,6 @@ import { PROJECTS, GENRE_LABELS, Project } from '../data';
 const GENRES = [
   { key: 'ALL', label: 'All Releases' },
   { key: 'WEB', label: 'Web' },
-  { key: 'SYSTEMS', label: 'Systems' },
   { key: 'OSS', label: 'AI/ML' },
   { key: 'LAB', label: 'Backend' },
 ];

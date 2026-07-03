@@ -18,11 +18,7 @@ export default function Hero({ spinning, onToggleSpin, np }: HeroProps) {
 
   return (
     <header id="top" style={{ maxWidth: 1180, margin: '0 auto', padding: '0 clamp(20px,5vw,56px)' }}>
-      <div style={{
-        display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))',
-        gap: 'clamp(32px,5vw,64px)', alignItems: 'center',
-        padding: 'clamp(36px,6vw,72px) 0 clamp(48px,6vw,88px)',
-      }}>
+      <div className="hero-grid">
         <div>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 9,
@@ -32,12 +28,9 @@ export default function Hero({ spinning, onToggleSpin, np }: HeroProps) {
             <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent)' }} />
             <span style={{ fontFamily: "'Shippori Mincho', serif", fontWeight: 600 }}>ようこそ</span> · EST. 2024
           </div>
-          <h1 style={{
-            fontSize: 'clamp(28px,5.5vw,82px)', lineHeight: 1.05,
-            letterSpacing: '-0.03em', fontWeight: 800, margin: '20px 0 0',
-          }}>
-            A <span style={{ color: 'var(--accent)', fontFamily: 'Newsreader, serif', fontWeight: 400, fontStyle: 'italic', letterSpacing: 0 }}>developer</span><br />spinning up first demo,<br />working toward a{' '}
-            <span style={{ fontFamily: 'Newsreader, serif', fontWeight: 400, fontStyle: 'italic', letterSpacing: 0 }}><br/>great record.</span>
+          <h1 className="hero-h1">
+            A <span style={{ color: 'var(--accent)', fontFamily: 'Newsreader, serif', fontWeight: 400, fontStyle: 'italic', letterSpacing: 0 }}>developer </span><br className="hero-break" />spinning up first demo,<br className="hero-break" />working toward a{' '}
+            <span style={{ fontFamily: 'Newsreader, serif', fontWeight: 400, fontStyle: 'italic', letterSpacing: 0 }}><br className="hero-break" />great record.</span>
           </h1>
           <div style={{ display: 'flex', gap: 13, flexWrap: 'wrap', marginTop: 34 }}>
             <a href="#contact"
@@ -54,7 +47,7 @@ export default function Hero({ spinning, onToggleSpin, np }: HeroProps) {
         </div>
 
         {/* Turntable card */}
-        <div style={{
+        <div className="hero-turntable" style={{
           position: 'relative', width: 'min(100%,440px)', justifySelf: 'center',
           aspectRatio: '1/0.95',
           background: 'linear-gradient(158deg,oklch(0.42 0.022 62),oklch(0.31 0.018 56))',

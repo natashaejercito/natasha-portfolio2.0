@@ -70,10 +70,10 @@ export default function LiveSets() {
         <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, letterSpacing: '0.16em', color: 'var(--gold)', textTransform: 'uppercase' }}>LIVE SETS / 01</div>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 24, flexWrap: 'wrap', marginTop: 12 }}>
           <h2 style={{ fontSize: 'clamp(30px,4.5vw,52px)', fontWeight: 800, letterSpacing: '-0.02em', margin: 0, maxWidth: '15ch' }}>Offline, on the scene</h2>
-          <p style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: 'rgba(242,235,221,0.62)', maxWidth: '36ch', lineHeight: 1.65, margin: 0 }}>Drag to see more, hover to focus.</p>
+          <p className="liveset-hint" style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: 'rgba(242,235,221,0.62)', maxWidth: '36ch', lineHeight: 1.65, margin: 0 }}>Drag to see more, hover to focus.</p>
         </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(22px,5vw,60px)', marginTop: 32, borderTop: '1px solid rgba(242,235,221,0.15)', paddingTop: 24 }}>
-          {[['6', 'HACKATHON/EVENTS'], ['3', 'ACTIVITIES'], ['∞', 'Matchas consumed'], ['♡', 'Good company']].map(([val, label]) => (
+        <div className="liveset-stats">
+          {[['8', 'HACKATHON/EVENTS'], ['5', 'ACTIVITIES'], ['∞', 'Matchas consumed'], ['♡++', 'Good company']].map(([val, label]) => (
             <div key={label}>
               <div style={{ fontSize: 'clamp(26px,3vw,40px)', fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1 }}>{val}</div>
               <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'rgba(242,235,221,0.6)', letterSpacing: '0.06em', textTransform: 'uppercase', marginTop: 5 }}>{label}</div>
@@ -101,15 +101,12 @@ export default function LiveSets() {
         {tiles.map(e => (
           <div
             key={e.uid}
-            style={{ flex: '0 0 auto', width: 'clamp(186px,62vw,232px)', cursor: 'pointer', position: 'relative', transformOrigin: 'bottom center', zIndex: e.isHov ? 30 : 1 }}
+            className={`liveset-tile${e.isHov ? ' is-hov' : ''}`}
+            style={{ flex: '0 0 auto', width: 'clamp(186px,62vw,232px)', cursor: 'pointer', position: 'relative', transformOrigin: 'bottom center' }}
             onMouseEnter={() => setHovered(e.uid)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div style={{
-              position: 'relative', width: '100%', transformOrigin: 'bottom center',
-              transform: e.isHov ? 'translateY(-16px) scale(1.16)' : 'none',
-              transition: 'transform .42s cubic-bezier(.2,.7,.2,1)',
-            }}>
+            <div className={`liveset-card-inner${e.isHov ? ' is-hov' : ''}`}>
               {/* Disc behind sleeve */}
               <div style={{
                 position: 'absolute', top: 0, left: '50%', width: '92%', aspectRatio: '1/1',

@@ -27,8 +27,8 @@ export default function About() {
               {[
                 ['ARTIST', 'Natasha Ejercito'],
                 ['FORMAT', 'Software'],
-                ['GENRE', 'Frontend · Data · AI/ML · Backend'],
-                ['LABEL', 'Student · Intern'],
+                ['GENRE', 'Frontend · AI · Data · Backend'],
+                ['LABEL', 'Student'],
               ].map(([label, val], i, arr) => (
                 <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '11px 0', borderBottom: i < arr.length - 1 ? '1px solid var(--line)' : undefined, fontFamily: "'Space Mono', monospace", fontSize: 12 }}>
                   <span style={{ color: 'var(--muted)', letterSpacing: '0.06em' }}>{label}</span>
@@ -43,9 +43,8 @@ export default function About() {
           <div>
             <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, letterSpacing: '0.14em', color: 'var(--ink)', textTransform: 'uppercase', paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>Side A — Experience</div>
             {[
-              { code: 'A1', role: 'Operations & Data Analyst Intern', org: 'ventureLAB', year: 'ongoing' },
-              { code: 'A2', role: 'Frontend Developer', org: 'Hack the Valley', year: '2025' },
-              { code: 'A3', role: 'Support Services Officer', org: 'Seneca Polytechnic', year: '2024' },
+              { code: 'A1', role: 'Frontend Developer', org: 'Hack the Valley', year: '2025' },
+              { code: 'A2', role: 'Support Services Officer', org: 'Seneca Polytechnic', year: '2024' },
             ].map((item, i, arr) => (
               <div key={item.code} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 14, padding: '15px 0', borderBottom: i < arr.length - 1 ? '1px solid var(--line)' : undefined }}>
                 <span>
