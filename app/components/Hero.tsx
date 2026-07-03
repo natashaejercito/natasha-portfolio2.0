@@ -33,11 +33,11 @@ export default function Hero({ spinning, onToggleSpin, np }: HeroProps) {
             <span style={{ fontFamily: "'Shippori Mincho', serif", fontWeight: 600 }}>ようこそ</span> · EST. 2024
           </div>
           <h1 style={{
-            fontSize: 'clamp(42px,7vw,90px)', lineHeight: 0.97,
-            letterSpacing: '-0.025em', fontWeight: 800, margin: '20px 0 0',
+            fontSize: 'clamp(28px,5.5vw,82px)', lineHeight: 1.05,
+            letterSpacing: '-0.03em', fontWeight: 800, margin: '20px 0 0',
           }}>
-            Software developer,<br />spinning ideas<br />into{' '}
-            <span style={{ fontFamily: 'Newsreader, serif', fontWeight: 400, fontStyle: 'italic', letterSpacing: 0 }}>systems.</span>
+            A <span style={{ color: 'var(--accent)', fontFamily: 'Newsreader, serif', fontWeight: 400, fontStyle: 'italic', letterSpacing: 0 }}>developer</span><br />spinning up first demo,<br />working toward a{' '}
+            <span style={{ fontFamily: 'Newsreader, serif', fontWeight: 400, fontStyle: 'italic', letterSpacing: 0 }}><br/>great record.</span>
           </h1>
           <div style={{ display: 'flex', gap: 13, flexWrap: 'wrap', marginTop: 34 }}>
             <a href="#contact"
