@@ -11,7 +11,7 @@ export default function About() {
           <div>
             <h2 style={{ fontSize: 'clamp(28px,4vw,46px)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 22px' }}>About the artist</h2>
             <p style={{ fontFamily: 'Newsreader, serif', fontSize: 'clamp(18px,1.7vw,21px)', lineHeight: 1.7, color: 'var(--ink)', margin: '0 0 18px' }}>
-              Natasha is a developer and data analyst that admires software development. She likes building frontend interfaces in Next.js and CMS platforms like WordPress, learning backend with Node and database management such as TablePlus, and experimenting in machine learning with Python.
+              Natasha is a student that admires software development. She likes building frontend interfaces in Next.js and CMS platforms like WordPress, learning backend with Node and database management such as TablePlus, and experimenting in machine learning with Python.
             </p>
             <p style={{ fontFamily: 'Newsreader, serif', fontSize: 'clamp(18px,1.7vw,21px)', lineHeight: 1.7, color: 'var(--ink)', margin: 0 }}>
               You&apos;ll see her offline playing volleyball, helping organize the largest and most unique hackathons, obsessing over matcha cafes in Toronto, and chatting with Claude about kawaii side project ideas.

@@ -95,7 +95,7 @@ export default function Nav({ palette, onPaletteChange }: NavProps) {
                 onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
               >{label}</a>
             ))}
-            <a href="https://drive.google.com/file/d/1z_xQ7DbDp3KVIeServzrEqhxnyHwP_V-/view?usp=sharing"
+            <a href="https://drive.google.com/file/d/10O6CRoHnWPagctsOr_RbGp740M5yK_gD/view?usp=sharing"
               target="_blank" rel="noopener"
               style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, letterSpacing: '0.04em', color: 'var(--ink)', border: '1px solid var(--line)', padding: '8px 14px', borderRadius: 4, background: 'var(--card)' }}
               onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--ink)')}
@@ -128,7 +128,7 @@ export default function Nav({ palette, onPaletteChange }: NavProps) {
             <a key={href} href={href} onClick={close}>{label}</a>
           ))}
           <a
-            href="https://drive.google.com/file/d/1z_xQ7DbDp3KVIeServzrEqhxnyHwP_V-/view?usp=sharing"
+            href="https://drive.google.com/file/d/10O6CRoHnWPagctsOr_RbGp740M5yK_gD/view?usp=sharing"
             target="_blank" rel="noopener"
             className="resume-link"
             onClick={close}

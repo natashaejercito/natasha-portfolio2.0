@@ -4,7 +4,7 @@ const LINKS = [
   { num: '01', label: 'Outlook.com', sub: '@outlook.com', href: 'mailto:natasha.ejercito@outlook.com', external: false },
   { num: '02', label: 'GitHub', sub: '@natashaejercito', href: 'https://github.com/natashaejercito', external: true },
   { num: '03', label: 'Instagram', sub: '@tashaejercito', href: 'https://www.instagram.com/tashaejercito/', external: true },
-  { num: '04', label: 'Résumé', sub: 'Resume-Natasha.pdf', href: 'https://drive.google.com/file/d/1z_xQ7DbDp3KVIeServzrEqhxnyHwP_V-/view?usp=sharing', external: true },
+  { num: '04', label: 'Résumé', sub: 'Resume-Natasha.pdf', href: 'https://drive.google.com/file/d/10O6CRoHnWPagctsOr_RbGp740M5yK_gD/view?usp=sharing', external: true },
 ];
 
 export default function Contact() {
