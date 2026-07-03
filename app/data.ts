@@ -9,15 +9,17 @@ export const PROJECTS = [
   { id: 'sa-008', catalog: 'NE-008', title: 'Discography Artist', genre: 'WEB', year: '2025', desc: "Fan girling over Wave to Earth showcasing their indie surf-rock music + other info.", color: '#3f7d72', dark: true, repo: 'https://github.com/natashaejercito/wave-to-earth' },
 ] as const;
 
+export const PORTRAIT_URL = 'https://res.cloudinary.com/aprltygr/image/upload/v1783049542/IMG_0822_nldf4e.jpg';
+
 export const EVENTS = [
-  { id: 'lv-07', cat: 'LIVE-01', name: 'Bruno Mars', type: 'Offline Activity', role: 'First concert', place: 'Rogers Stadium', year: '2026', img: '/images/bruno-mars.jpg', imgPos: '74% 45%' },
-  { id: 'lv-02', cat: 'LIVE-02', name: 'SOON Hackathon', type: 'Hackathon', role: 'Organizer · Operations lead', place: 'Uxbridge', year: '2026', img: '/images/soon-hackathon.jpg', imgPos: '18% 50%' },
-  { id: 'lv-05', cat: 'LIVE-03', name: 'Setting the Stage: Infrastructure for the Next Wave of LLMs', type: 'Spotify Event', role: 'Me & Cindy ♥', place: 'Toronto', year: '2026', img: '/images/spotify-event.jpg', imgPos: '50% 35%' },
-  { id: 'lv-04', cat: 'LIVE-04', name: 'Wu Wei', type: 'Café', role: 'Best matcha so far', place: 'Toronto', year: '2026', img: '/images/wu-wei.jpg', imgPos: '50% 50%' },
-  { id: 'lv-03', cat: 'LIVE-05', name: 'GDG UTSC', type: 'AI Conference', role: 'Organizer · Sponsorship director', place: 'Scarborough', year: '2025', img: '/images/gdg-utsc.jpg', imgPos: '40% 35%' },
-  { id: 'lv-01', cat: 'LIVE-06', name: 'Hack the Valley', type: 'Hackathon', role: 'Hacker · Frontend', place: 'Scarborough', year: '2025', img: '/images/hack-the-valley.jpg', imgPos: '50% 50%' },
-  { id: 'lv-08', cat: 'LIVE-07', name: 'Fam', type: 'Good Company', role: 'Lil sis + cousins', place: 'Toronto', year: '2025', img: '/images/fam.jpg', imgPos: '50% 40%' },
-  { id: 'lv-06', cat: 'LIVE-08', name: 'Volleyball', type: 'Offline Activity', role: 'Drop-in', place: 'Toronto', year: '2024', img: '/images/volleyball.jpg', imgPos: '55% 40%' },
+  { id: 'lv-07', cat: 'LIVE-01', name: 'Bruno Mars', type: 'Offline Activity', role: 'First concert', place: 'Rogers Stadium', year: '2026', img: 'https://res.cloudinary.com/aprltygr/image/upload/v1783050495/IMG_7926_x5ndr9.jpg', imgPos: '74% 45%' },
+  { id: 'lv-02', cat: 'LIVE-02', name: 'SOON Hackathon', type: 'Hackathon', role: 'Organizer · Operations lead', place: 'Uxbridge', year: '2026', img: 'https://res.cloudinary.com/aprltygr/image/upload/v1783049542/4CC8D107-7C6F-4584-AE92-3EE7F12F3295_jr4j4t.jpg', imgPos: '18% 50%' },
+  { id: 'lv-05', cat: 'LIVE-03', name: 'Setting the Stage: Infrastructure for the Next Wave of LLMs', type: 'Spotify Event', role: 'Me & Cindy ♥', place: 'Toronto', year: '2026', img: 'https://res.cloudinary.com/aprltygr/image/upload/v1783049542/D95A769B-D20D-494F-808B-9F8EF63DA409_eykscw.jpg', imgPos: '50% 35%' },
+  { id: 'lv-04', cat: 'LIVE-04', name: 'Wu Wei', type: 'Café', role: 'Best matcha so far', place: 'Toronto', year: '2026', img: 'https://res.cloudinary.com/aprltygr/image/upload/v1783049985/IMG_5028_dkonom.jpg', imgPos: '50% 50%' },
+  { id: 'lv-03', cat: 'LIVE-05', name: 'GDG UTSC', type: 'AI Conference', role: 'Organizer · Sponsorship director', place: 'Scarborough', year: '2025', img: 'https://res.cloudinary.com/aprltygr/image/upload/v1783049542/IMG_0834_vzlov8.jpg', imgPos: '40% 35%' },
+  { id: 'lv-01', cat: 'LIVE-06', name: 'Hack the Valley', type: 'Hackathon', role: 'Hacker · Frontend', place: 'Scarborough', year: '2025', img: 'https://res.cloudinary.com/aprltygr/image/upload/v1783050589/IMG_5987_pr7siw.jpg', imgPos: '50% 50%' },
+  { id: 'lv-08', cat: 'LIVE-07', name: 'Fam', type: 'Good Company', role: 'Lil sis + cousins', place: 'Toronto', year: '2025', img: 'https://res.cloudinary.com/aprltygr/image/upload/v1783049543/IMG_5249_lxabrg.jpg', imgPos: '50% 40%' },
+  { id: 'lv-06', cat: 'LIVE-08', name: 'Volleyball', type: 'Offline Activity', role: 'Drop-in', place: 'Toronto', year: '2024', img: 'https://res.cloudinary.com/aprltygr/image/upload/v1783050802/IMG_3614_bvgydt.jpg', imgPos: '55% 40%' },
 ] as const;
 
 export const GENRE_LABELS: Record<string, string> = {
