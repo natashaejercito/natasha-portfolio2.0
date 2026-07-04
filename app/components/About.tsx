@@ -21,7 +21,7 @@ export default function About() {
 
           <div>
             <div style={{ position: 'relative', aspectRatio: '4/5', border: '1px solid #cfc4b0', borderRadius: 3, overflow: 'hidden' }}>
-              <Image src={PORTRAIT_URL} alt="Natasha Ejercito" fill style={{ objectFit: 'cover', objectPosition: '50% 28%' }} />
+              <Image src={PORTRAIT_URL} alt="Natasha Ejercito" fill draggable={false} onContextMenu={(e) => e.preventDefault()} style={{ objectFit: 'cover', objectPosition: '50% 28%' }} />
             </div>
             <div style={{ marginTop: 20, borderTop: '1px solid #cfc4b0' }}>
               {[

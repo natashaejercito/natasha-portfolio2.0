@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Natasha Ejercito — Portfolio",
-  description: "Software developer spinning ideas into systems.",
+  description: "A developer spinning up first demo, working toward a great record.",
 };
 
 export default function RootLayout({

@@ -120,6 +120,7 @@ export default function LiveSets() {
                 {e.img && (
                   <Image
                     src={e.img} alt={e.name} fill draggable={false}
+                    onContextMenu={(ev) => ev.preventDefault()}
                     style={{ objectFit: 'cover', objectPosition: e.imgPos }}
                   />
                 )}
