@@ -121,7 +121,7 @@ export default function LiveSets() {
                   <Image
                     src={e.img} alt={e.name} fill draggable={false}
                     onContextMenu={(ev) => ev.preventDefault()}
-                    style={{ objectFit: 'cover', objectPosition: e.imgPos }}
+                    style={{ objectFit: 'cover', objectPosition: e.imgPos, WebkitTouchCallout: 'none', WebkitUserSelect: 'none', userSelect: 'none' }}
                   />
                 )}
                 <div style={{
