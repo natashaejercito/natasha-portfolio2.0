@@ -24,6 +24,7 @@ export default function NowPlaying({ np, spinning, onToggleSpin }: NowPlayingPro
       <style>{`
         @media (max-width: 480px) {
           .nowplaying-side-label { display: none; }
+          .nowplaying-controls { margin-left: 10px; }
         }
       `}</style>
       {/* Mini disc */}
@@ -37,8 +38,8 @@ export default function NowPlaying({ np, spinning, onToggleSpin }: NowPlayingPro
           <span style={{ width: '38%', height: '38%', borderRadius: '50%', background: np.color }} />
         </div>
         <div style={{ minWidth: 0 }}>
-          <div style={{ display: 'flex', gap: 8, alignItems: 'baseline' }}>
-            <span style={{ fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap' }}>{np.title}</span>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'baseline', minWidth: 0 }}>
+            <span style={{ fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', display: 'block', maxWidth: '100%' }}>{np.title}</span>
           </div>
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'var(--muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
             {np.catalog} • {genreLabel}
@@ -47,7 +48,7 @@ export default function NowPlaying({ np, spinning, onToggleSpin }: NowPlayingPro
       </div>
 
       {/* Controls */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 14, flex: 1.4, maxWidth: 520, minWidth: 0 }}>
+      <div className="nowplaying-controls" style={{ display: 'flex', alignItems: 'center', gap: 14, flex: 1.4, maxWidth: 520, minWidth: 0 }}>
         <button
           onClick={onToggleSpin}
           style={{
