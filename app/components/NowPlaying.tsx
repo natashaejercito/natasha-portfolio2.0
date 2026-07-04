@@ -21,6 +21,11 @@ export default function NowPlaying({ np, spinning, onToggleSpin }: NowPlayingPro
       borderTop: '1px solid var(--line)',
       overflow: 'hidden',
     }}>
+      <style>{`
+        @media (max-width: 480px) {
+          .nowplaying-side-label { display: none; }
+        }
+      `}</style>
       {/* Mini disc */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 13, minWidth: 0, flex: 1 }}>
         <div style={{
@@ -84,7 +89,7 @@ export default function NowPlaying({ np, spinning, onToggleSpin }: NowPlayingPro
             }} />
           ))}
         </div>
-        <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'var(--muted)', letterSpacing: '0.08em', whiteSpace: 'nowrap' }}>SIDE A</span>
+        <span className="nowplaying-side-label" style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'var(--muted)', letterSpacing: '0.08em', whiteSpace: 'nowrap' }}>SIDE A</span>
       </div>
     </div>
   );
