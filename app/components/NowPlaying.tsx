@@ -83,10 +83,10 @@ export default function NowPlaying({ np, spinning, onToggleSpin }: NowPlayingPro
           {spinning ? '❚❚' : '▶'}
         </button>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flex: '0 0 auto', marginLeft: 'auto' }}>
-          <EqBars play={play} />
           <a href={np.repo} target="_blank" rel="noopener noreferrer" title="View repository" style={githubLinkStyle} onMouseEnter={e => (e.currentTarget.style.color = 'var(--ink)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}>
             <GithubIcon size={16} />
           </a>
+          <EqBars play={play} />
         </div>
       </div>
     </div>
