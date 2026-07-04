@@ -1,7 +1,9 @@
 'use client';
 import type React from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { PROJECTS, GENRE_LABELS, Project } from '../data';
+
+const STACK_EXIT_MS = 420;
 
 const GENRES = [
   { key: 'ALL', label: 'All Releases' },
@@ -84,8 +86,13 @@ export default function Projects({ onPlay }: ProjectsProps) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [stackIndex, setStackIndex] = useState(0);
   const [prevGenre, setPrevGenre] = useState(genre);
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [exiting, setExiting] = useState<{ p: Project; idx: number; popped: boolean } | null>(null);
+  const [exitAnimating, setExitAnimating] = useState(false);
   const dragStartY = useRef<number | null>(null);
   const dragMoved = useRef(false);
+  const exitTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const currentGenreRef = useRef(genre);
 
   const all = [...PROJECTS];
   const filtered = genre === 'ALL' ? all : all.filter(p => p.genre === genre);
@@ -93,11 +100,40 @@ export default function Projects({ onPlay }: ProjectsProps) {
   if (genre !== prevGenre) {
     setPrevGenre(genre);
     setStackIndex(0);
+    setExiting(null);
+    setExitAnimating(false);
   }
 
+  useEffect(() => {
+    currentGenreRef.current = genre;
+  }, [genre]);
+
+  useEffect(() => () => {
+    if (exitTimeoutRef.current) clearTimeout(exitTimeoutRef.current);
+  }, []);
+
   const stackLen = filtered.length;
-  const goNext = () => setStackIndex(i => (i + 1) % stackLen);
-  const goPrev = () => setStackIndex(i => (i - 1 + stackLen) % stackLen);
+  const peekCount = Math.min(2, stackLen - 1);
+  const frontProject = filtered[stackIndex];
+
+  function goNext() {
+    if (exiting) return;
+    const p = frontProject;
+    const genreAtSwipe = genre;
+    setExiting({ p, idx: stackIndex, popped: p.id === activeId });
+    setExitAnimating(false);
+    requestAnimationFrame(() => requestAnimationFrame(() => setExitAnimating(true)));
+    exitTimeoutRef.current = setTimeout(() => {
+      if (currentGenreRef.current !== genreAtSwipe) return;
+      setStackIndex(i => (i + 1) % stackLen);
+      setExiting(null);
+      setExitAnimating(false);
+    }, STACK_EXIT_MS);
+  }
+
+  function onFrontPointerUp(e: React.PointerEvent) {
+    onStackPointerUp(e, frontProject);
+  }
 
   function onStackPointerDown(e: React.PointerEvent) {
     e.currentTarget.setPointerCapture(e.pointerId);
@@ -112,9 +148,10 @@ export default function Projects({ onPlay }: ProjectsProps) {
     if (dragStartY.current == null) return;
     const delta = e.clientY - dragStartY.current;
     dragStartY.current = null;
-    if (Math.abs(delta) > 40) {
-      if (delta < 0) goNext(); else goPrev();
+    if (delta < -40) {
+      goNext();
     } else if (!dragMoved.current) {
+      setActiveId(p.id);
       onPlay(p);
     }
   }
@@ -201,55 +238,72 @@ export default function Projects({ onPlay }: ProjectsProps) {
           })}
         </div>
 
-        {/* Project stack (mobile): swipe up/down to browse, tap to play */}
+        {/* Project stack (mobile): swipe up to browse, tap to play */}
         <div className="projects-stack" style={{ flexDirection: 'column', alignItems: 'center', marginTop: 56 }}>
-          <div style={{ position: 'relative', width: '100%', maxWidth: 280, paddingTop: 32 }}>
-            {[2, 1, 0].map(back => {
+          <div style={{ position: 'relative', width: '100%', maxWidth: 280, aspectRatio: '1/1', paddingTop: 32 }}>
+            {Array.from({ length: peekCount }, (_, k) => k + 1).map(back => {
               const idx = (stackIndex + back) % stackLen;
               const p = filtered[idx];
-              const isTop = back === 0;
               const scale = 1 - back * 0.06;
               const liftY = back * -16;
-              const rotate = back === 0 ? 0 : back === 1 ? -3 : 4;
+              const rotate = back === 1 ? -3 : 4;
               return (
                 <div
                   key={p.id}
-                  onPointerDown={isTop ? onStackPointerDown : undefined}
-                  onPointerMove={isTop ? onStackPointerMove : undefined}
-                  onPointerUp={isTop ? (e) => onStackPointerUp(e, p) : undefined}
                   style={{
-                    position: back === 0 ? 'relative' : 'absolute',
-                    top: back === 0 ? undefined : 32,
-                    left: 0, right: 0,
+                    position: 'absolute', top: 32, left: 0, right: 0,
                     zIndex: 3 - back,
-                    opacity: back === 0 ? 1 : back === 1 ? 0.85 : 0.6,
+                    opacity: back === 1 ? 0.85 : 0.6,
                     transform: `translateY(${liftY}px) rotate(${rotate}deg) scale(${scale})`,
-                    touchAction: isTop ? 'none' : undefined,
-                    cursor: isTop ? 'pointer' : undefined,
+                    transition: 'transform .38s cubic-bezier(.2,.7,.2,1), opacity .38s',
                   }}
                 >
                   <AlbumArt p={p} i={idx} liftDisc={false} />
                 </div>
               );
             })}
-          </div>
-          {(() => {
-            const p = filtered[stackIndex];
-            const genreLabel = GENRE_LABELS[p.genre] || p.genre;
-            return (
-              <div style={{ marginTop: 15, width: '100%', maxWidth: 280, textAlign: 'center' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 10 }}>
-                  <span style={{ fontWeight: 600, fontSize: 15 }}>{p.title}</span>
-                  <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'rgba(250,247,240,0.55)', flex: '0 0 auto' }}>{p.year}</span>
-                </div>
-                <div style={{ fontSize: 13, color: 'rgba(250,247,240,0.7)', lineHeight: 1.45, marginTop: 5, textAlign: 'left' }}>{p.desc}</div>
-                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 10.5, color: 'var(--gold)', letterSpacing: '0.05em', marginTop: 9, textAlign: 'left' }}>{p.catalog} · {genreLabel}</div>
-                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'rgba(250,247,240,0.45)', marginTop: 16 }}>
-                  ▲ swipe for next · {stackIndex + 1} / {stackLen}
-                </div>
+            {!exiting && (
+              <div
+                key={frontProject.id}
+                onPointerDown={onStackPointerDown}
+                onPointerMove={onStackPointerMove}
+                onPointerUp={onFrontPointerUp}
+                style={{
+                  position: 'absolute', top: 32, left: 0, right: 0,
+                  zIndex: 3,
+                  touchAction: 'none',
+                  cursor: 'pointer',
+                  transition: 'transform .38s cubic-bezier(.2,.7,.2,1)',
+                }}
+              >
+                <AlbumArt p={frontProject} i={stackIndex} liftDisc={frontProject.id === activeId} />
               </div>
-            );
-          })()}
+            )}
+            {exiting && (
+              <div
+                style={{
+                  position: 'absolute', top: 32, left: 0, right: 0,
+                  zIndex: 10, pointerEvents: 'none',
+                  transition: `transform ${STACK_EXIT_MS}ms cubic-bezier(.3,.7,.4,1), opacity ${STACK_EXIT_MS}ms ease`,
+                  transform: exitAnimating ? 'translateY(-64px) rotate(-8deg) scale(0.74)' : 'translateY(0px) rotate(0deg) scale(1)',
+                  opacity: exitAnimating ? 0 : 1,
+                }}
+              >
+                <AlbumArt p={exiting.p} i={exiting.idx} liftDisc={exiting.popped} />
+              </div>
+            )}
+          </div>
+          <div style={{ marginTop: 15, width: '100%', maxWidth: 280, textAlign: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 10 }}>
+              <span style={{ fontWeight: 600, fontSize: 15 }}>{frontProject.title}</span>
+              <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'rgba(250,247,240,0.55)', flex: '0 0 auto' }}>{frontProject.year}</span>
+            </div>
+            <div style={{ fontSize: 13, color: 'rgba(250,247,240,0.7)', lineHeight: 1.45, marginTop: 5, textAlign: 'left' }}>{frontProject.desc}</div>
+            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 10.5, color: 'var(--gold)', letterSpacing: '0.05em', marginTop: 9, textAlign: 'left' }}>{frontProject.catalog} · {GENRE_LABELS[frontProject.genre] || frontProject.genre}</div>
+            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'rgba(250,247,240,0.45)', marginTop: 16 }}>
+              ▲ swipe for next · {stackIndex + 1} / {stackLen}
+            </div>
+          </div>
         </div>
       </div>
     </section>
