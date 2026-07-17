@@ -1,11 +1,12 @@
 export const PROJECTS = [
-  { id: 'sa-001', catalog: 'NE-001', title: 'Wordpress', genre: 'WEB', year: '2026', desc: 'Using CMS fundamentals with this project.', color: 'var(--accent)', dark: true, repo: 'https://github.com/natashaejercito/natasha-wordpress' },
-  { id: 'sa-002', catalog: 'NE-002', title: 'My Tamagotchi', genre: 'OSS', year: '2026', desc: 'A chatbot companion.', color: '#d6a23c', dark: false, repo: 'https://github.com/natashaejercito/my-tamagotchi' },
-  { id: 'sa-003', catalog: 'NE-003', title: 'Volleyball Statistics', genre: 'LAB', year: '2026', desc: 'Helps to identify mistakes and to leverage skills in the sport.', color: '#3f7d72', dark: true, repo: 'https://github.com/natashaejercito/volleyball-stats' },
-  { id: 'sa-005', catalog: 'NE-004', title: 'Pomodoro Timer', genre: 'WEB', year: '2025', desc: 'A simple application that uses the fundamentals of HTML, CSS, and JS.', color: '#9ab0bf', dark: false, repo: 'https://github.com/natashaejercito/pomodoro-timer' },
-  { id: 'sa-006', catalog: 'NE-005', title: 'Pretty Plants Info', genre: 'WEB', year: '2025', desc: 'A website to know more about the pretty plants we surround ourselves with.', color: '#9c5a3c', dark: true, repo: 'https://github.com/natashaejercito/pretty-plants-info' },
-  { id: 'sa-007', catalog: 'NE-006', title: 'Haiku Generator', genre: 'OSS', year: '2025', desc: 'An AI generator that enforces 5-7-5 syllable rule.', color: '#d6a23c', dark: false, repo: 'https://github.com/natashaejercito/haiku-ai-generator' },
-  { id: 'sa-008', catalog: 'NE-007', title: 'Discography Artist', genre: 'WEB', year: '2025', desc: "Fan girling over Wave to Earth showcasing their indie surf-rock music + other info.", color: '#3f7d72', dark: true, repo: 'https://github.com/natashaejercito/wave-to-earth' },
+  { id: 'sa-001', catalog: 'NE-001', title: 'NatBlog', genre: 'WEB', year: '2026', desc: 'Using CMS fundamentals to build my personal blog.', color: 'var(--accent)', dark: true, repo: 'https://github.com/natashaejercito/wp-natblog' },
+  { id: 'sa-002', catalog: 'NE-002', title: 'Alignly', genre: 'OSS', year: '2026', desc: 'A career alignment tool for students searching for an internship or co-op.', color: '#d6a23c', dark: false, repo: 'https://alignly-career.vercel.app/' },
+  { id: 'sa-003', catalog: 'NE-003', title: 'My Tamagotchi', genre: 'OSS', year: '2026', desc: 'A digital pet game built with React and TypeScript.', color: '#d6a23c', dark: false, repo: 'https://github.com/natashaejercito/my-tamagotchi' },
+  { id: 'sa-004', catalog: 'NE-004', title: 'Volleyball Statistics', genre: 'LAB', year: '2026', desc: 'Helps to identify mistakes and to leverage skills in the sport.', color: '#3f7d72', dark: true, repo: 'https://github.com/natashaejercito/volleyball-stats' },
+  { id: 'sa-005', catalog: 'NE-005', title: 'Pomodoro Timer', genre: 'WEB', year: '2025', desc: 'A simple application that uses the fundamentals of HTML, CSS, and JS.', color: '#9ab0bf', dark: false, repo: 'https://github.com/natashaejercito/pomodoro-timer' },
+  { id: 'sa-006', catalog: 'NE-006', title: 'Pretty Plants Info', genre: 'WEB', year: '2025', desc: 'A website to know more about the pretty plants we surround ourselves with.', color: '#9c5a3c', dark: true, repo: 'https://github.com/natashaejercito/pretty-plants-info' },
+  { id: 'sa-007', catalog: 'NE-007', title: 'Haiku Generator', genre: 'OSS', year: '2025', desc: 'An AI generator that enforces 5-7-5 syllable rule.', color: '#d6a23c', dark: false, repo: 'https://github.com/natashaejercito/haiku-ai-generator' },
+  { id: 'sa-008', catalog: 'NE-008', title: 'Discography Artist', genre: 'WEB', year: '2025', desc: 'Fan girling over Wave to Earth showcasing their indie surf-rock music + other info.', color: '#3f7d72', dark: true, repo: 'https://github.com/natashaejercito/wave-to-earth' }
 ] as const;
 
 export const PORTRAIT_URL = 'https://res.cloudinary.com/aprltygr/image/upload/v1783049542/IMG_0822_nldf4e.jpg';
