@@ -28,6 +28,20 @@ html {
   background: #f4ede0;
 }
 
+.reveal {
+  transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    transition: none;
+    transform: none !important;
+  }
+}
+
 body {
   margin: 0;
   background: var(--bg);

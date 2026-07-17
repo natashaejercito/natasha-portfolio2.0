@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import TechStack from './components/TechStack';
 import Contact from './components/Contact';
 import NowPlaying from './components/NowPlaying';
+import Reveal from './components/Reveal';
 import { PROJECTS, PALETTES, PaletteName, Project } from './data';
 
 export default function Home() {
@@ -27,11 +28,11 @@ export default function Home() {
     <div style={{ paddingBottom: 64, position: 'relative', overflowX: 'clip' }}>
       <Nav palette={palette} onPaletteChange={setPalette} />
       <Hero spinning={spinning} onToggleSpin={() => setSpinning(s => !s)} np={np} />
-      <LiveSets />
-      <About />
-      <Projects onPlay={(p: Project) => { setNp(p); setSpinning(true); }} />
-      <TechStack />
-      <Contact />
+      <Reveal><LiveSets /></Reveal>
+      <Reveal><About /></Reveal>
+      <Reveal><Projects onPlay={(p: Project) => { setNp(p); setSpinning(true); }} /></Reveal>
+      <Reveal><TechStack /></Reveal>
+      <Reveal><Contact /></Reveal>
       <NowPlaying np={np} spinning={spinning} onToggleSpin={() => setSpinning(s => !s)} />
     </div>
   );
