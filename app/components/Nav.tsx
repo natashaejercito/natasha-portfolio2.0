@@ -95,7 +95,7 @@ export default function Nav({ palette, onPaletteChange }: NavProps) {
                 onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
               >{label}</a>
             ))}
-            <a href="https://drive.google.com/file/d/1hqqp2GZodpKIK_VvzXzklV7-F2R01u7a/view?usp=sharing"
+            <a href="https://drive.google.com/file/d/1lPyrt462W2pTpz2jHN2CmtoWu-D1b2Dy/view?usp=sharing"
               target="_blank" rel="noopener"
               style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, letterSpacing: '0.04em', color: 'var(--ink)', border: '1px solid var(--line)', padding: '8px 14px', borderRadius: 4, background: 'var(--card)' }}
               onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--ink)')}

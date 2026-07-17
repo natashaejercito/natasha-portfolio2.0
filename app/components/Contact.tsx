@@ -4,7 +4,7 @@ const LINKS = [
   { num: '01', label: 'GitHub', sub: '@natcodes', href: 'https://github.com/natashaejercito', external: true },
   { num: '02', label: 'LinkedIn', sub: '@natashaejercito', href: 'https://www.linkedin.com/in/natashaejercito/', external: true },
   { num: '03', label: 'Instagram', sub: '@tashaejercito', href: 'https://www.instagram.com/tashaejercito/', external: true },
-  { num: '04', label: 'Résumé', sub: 'Resume_Natasha Ejercito.pdf', href: 'https://drive.google.com/file/d/1hqqp2GZodpKIK_VvzXzklV7-F2R01u7a/view?usp=sharing', external: true },
+  { num: '04', label: 'Résumé', sub: 'Resume_Natasha Ejercito.pdf', href: 'https://drive.google.com/file/d/1lPyrt462W2pTpz2jHN2CmtoWu-D1b2Dy/view?usp=sharing', external: true },
 ];
 
 export default function Contact() {
