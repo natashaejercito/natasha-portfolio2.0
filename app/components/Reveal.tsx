@@ -6,6 +6,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
+  // Prevent mobile browsers' address-bar show/hide (which fires a resize event)
+  // from forcing ScrollTrigger to recalculate trigger positions mid-scroll —
+  // that recalculation can snap an in-progress reveal straight to its end state.
+  ScrollTrigger.config({ ignoreMobileResize: true });
 }
 
 interface RevealProps {

@@ -6,7 +6,7 @@ import { PROJECTS, GENRE_LABELS, Project } from '../data';
 const STACK_EXIT_MS = 420;
 
 const GENRES = [
-  { key: 'ALL', label: 'All Releases' },
+  { key: 'ALL', label: 'All' },
   { key: 'WEB', label: 'Web' },
   { key: 'OSS', label: 'AI/ML' },
   { key: 'LAB', label: 'Backend' },
