@@ -13,7 +13,7 @@ export default function Contact() {
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(72px,9vw,120px) clamp(20px,5vw,56px)' }}>
         <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, letterSpacing: '0.16em', color: '#d8a73f', textTransform: 'uppercase' }}>SIDE B — CONNECT</div>
         <h2 style={{ fontSize: 'clamp(32px,5.5vw,68px)', fontWeight: 800, letterSpacing: '-0.025em', lineHeight: 1.0, margin: '18px 0 0', maxWidth: '18ch' }}>
-          Have a record/song recommendation? 
+          Have a record/song recommendation?
         </h2>
         <p style={{ fontSize: 'clamp(16px,1.6vw,19px)', color: 'rgba(250,247,240,0.72)', maxWidth: '50ch', margin: '22px 0 0', lineHeight: 1.55 }}>
           Hello y&apos;all, thanks for visiting my website ♡ Let&apos;s connect!!
