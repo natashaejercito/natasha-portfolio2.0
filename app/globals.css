@@ -90,6 +90,16 @@ a {
   50% { opacity: 0.3; }
 }
 
+@keyframes text-shine {
+  from { background-position: 200% center; }
+  to { background-position: 0% center; }
+}
+
+@keyframes dot-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent); }
+  50% { box-shadow: 0 0 7px 2px var(--accent); }
+}
+
 /* Hero responsive */
 .hero-grid {
   display: grid;

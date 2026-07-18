@@ -5,10 +5,10 @@ import { PaletteName, PALETTES } from '../data';
 const PALETTE_NAMES: PaletteName[] = ['Warm Wax', 'Midnight Press', 'Cool Mint'];
 
 const NAV_LINKS: [string, string][] = [
-  ['#live', 'Live Sets'],
-  ['#about', 'Liner Notes'],
-  ['#work', 'Releases'],
-  ['#setup', 'The Setup'],
+  ['#live', 'Offline'],
+  ['#about', 'About'],
+  ['#work', 'Projects'],
+  ['#setup', 'Skills'],
 ];
 
 interface NavProps {
@@ -82,9 +82,7 @@ export default function Nav({ palette, onPaletteChange }: NavProps) {
           justifyContent: 'space-between', gap: 16,
         }}>
           <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', color: 'inherit', flex: '0 0 auto' }}>
-            <span style={{ width: 12, height: 12, borderRadius: '50%', background: 'var(--ink)', boxShadow: '0 0 0 3px var(--bg), 0 0 0 4.5px var(--ink)' }} />
-            <span style={{ fontWeight: 800, letterSpacing: '0.01em', fontSize: 15 }}>Natasha Ejercito</span>
-            <span style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: 'var(--muted)', letterSpacing: '0.06em' }}>SIDE A</span>
+            <span style={{ fontWeight: 800, letterSpacing: '0.01em', fontSize: 20 }}>Natasha's Portfolio</span>
           </a>
 
           {/* Desktop links */}

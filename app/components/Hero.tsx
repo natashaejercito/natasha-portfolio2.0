@@ -25,8 +25,18 @@ export default function Hero({ spinning, onToggleSpin, np }: HeroProps) {
             fontFamily: "'Space Mono', monospace", fontSize: 12,
             letterSpacing: '0.16em', color: 'var(--accent)', textTransform: 'uppercase',
           }}>
-            <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent)' }} />
-            <span style={{ fontFamily: "'Shippori Mincho', serif", fontWeight: 600 }}>ようこそ</span> · EST. 2024
+            <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent)', animation: 'dot-glow 2.6s ease-in-out infinite' }} />
+            <span style={{
+              backgroundImage: 'linear-gradient(90deg, var(--accent) 0%, var(--accent) 38%, var(--gold) 50%, var(--accent) 62%, var(--accent) 100%)',
+              backgroundSize: '200% auto',
+              color: 'transparent',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              animation: 'text-shine 2.6s linear infinite',
+            }}>
+              <span style={{ fontFamily: "'Shippori Mincho', serif", fontWeight: 600 }}>ようこそ</span> · EST. 2024
+            </span>
           </div>
           <h1 className="hero-h1">
             A <span style={{ color: 'var(--accent)', fontFamily: 'Newsreader, serif', fontWeight: 400, fontStyle: 'italic', letterSpacing: 0 }}>developer </span><br className="hero-break" />spinning up first demo,<br className="hero-break" />working toward a{' '}
