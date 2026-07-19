@@ -126,7 +126,7 @@ export default function Nav({ palette, onPaletteChange }: NavProps) {
             <a key={href} href={href} onClick={close}>{label}</a>
           ))}
           <a
-            href="https://drive.google.com/file/d/10O6CRoHnWPagctsOr_RbGp740M5yK_gD/view?usp=sharing"
+            href="https://drive.google.com/file/d/1lPyrt462W2pTpz2jHN2CmtoWu-D1b2Dy/view?usp=sharing"
             target="_blank" rel="noopener"
             className="resume-link"
             onClick={close}
